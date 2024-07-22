@@ -7,14 +7,14 @@ pipeline {
 						branches: [[name: '*/master']], 
 						userRemoteConfigs: [[
 							url: 'https://github.com/Nonsouris/JenkinsDependencyCheckTest' 
-						]]
+							]]
 						])
 			}
 		}
 
 		stage('OWASP DependencyCheck') {
 			steps {
-				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+				dependencyCheck additionalArguments: '--format HTML --format XML --nvdApiKey 4314dcc0-a7e3-44eb-a1be-423b66d4f4b1', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
 			}
 		}
 	}	
