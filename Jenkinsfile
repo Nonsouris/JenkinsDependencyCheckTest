@@ -4,12 +4,11 @@ pipeline {
 		stage('Checkout SCM') {
 			steps {
                 checkout([$class: 'GitSCM', 
-						branches: [[name: '*/master']], // Replace with your branch name
+						branches: [[name: '*/master']], 
 						doGenerateSubmoduleConfigurations: false,
 						extensions: [],
 						userRemoteConfigs: [[
-							url: 'https://github.com/Nonsouris/JenkinsDependencyCheckTest', // Replace with your repo URL
-							\\credentialsId: "${GITHUB_CREDENTIALS}"
+							url: 'https://github.com/Nonsouris/JenkinsDependencyCheckTest' 
 						]]
 			}
 		}
