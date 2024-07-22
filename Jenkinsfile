@@ -5,11 +5,10 @@ pipeline {
 			steps {
                 checkout([$class: 'GitSCM', 
 						branches: [[name: '*/master']], 
-						doGenerateSubmoduleConfigurations: false,
-						extensions: [],
 						userRemoteConfigs: [[
 							url: 'https://github.com/Nonsouris/JenkinsDependencyCheckTest' 
 						]]
+						])
 			}
 		}
 
